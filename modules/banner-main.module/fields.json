@@ -1,0 +1,518 @@
+[ {
+  "id" : "da953548-f8f5-e6d1-f6bd-44e2524f2752",
+  "name" : "module_anchor",
+  "display_width" : null,
+  "label" : "Ancre du module",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "mainBanner"
+}, {
+  "id" : "text",
+  "name" : "text",
+  "display_width" : null,
+  "label" : "Paragraphe",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<h1>Hello, world!</h1>"
+}, {
+  "id" : "4d2f6d14-31e9-a696-ca18-51e969aa6205",
+  "name" : "adds",
+  "display_width" : null,
+  "label" : "Accompagnement",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "form", "Formulaire" ], [ "image", "Image" ], [ "none", "Aucun" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "none"
+}, {
+  "id" : "84b67bc8-884c-c4ab-5ff6-7e88908e5eaa",
+  "name" : "form",
+  "display_width" : null,
+  "label" : "Formulaire",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "4d2f6d14-31e9-a696-ca18-51e969aa6205",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "form",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "2dc9466a-8130-f77e-4c05-5c0585a8724e",
+    "name" : "catchphrase",
+    "display_width" : null,
+    "label" : "Accroche",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<h2>Remplissez notre formulaire</h2>"
+  }, {
+    "id" : "2d3ebfc7-7a6a-58a4-6a67-f0722a0de668",
+    "name" : "form_field",
+    "display_width" : null,
+    "label" : "Formulaire",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "4d2f6d14-31e9-a696-ca18-51e969aa6205",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "form",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "form",
+    "default" : {
+      "response_type" : "inline",
+      "message" : "Merci d'avoir soumis le formulaire."
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "catchphrase" : "<h2>Remplissez notre formulaire</h2>",
+    "form_field" : {
+      "response_type" : "inline",
+      "message" : "Merci d'avoir soumis le formulaire."
+    }
+  }
+}, {
+  "id" : "a0fc198a-b79e-88c8-91f0-fc1c8bcf99c4",
+  "name" : "image_field",
+  "display_width" : null,
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "4d2f6d14-31e9-a696-ca18-51e969aa6205",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "image",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+}, {
+  "id" : "562e0120-0d7a-030c-d3f6-52e8711f7778",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "4527ba72-68d9-f785-27a6-78049a46d138",
+    "name" : "module_background",
+    "display_width" : null,
+    "label" : "Fond du module",
+    "help_text" : "",
+    "inline_help_text" : "",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "image", "Image" ], [ "color", "Couleur" ], [ "none", "Aucun" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "none"
+  }, {
+    "id" : "bcf704ef-7279-57a9-a8e1-2c8d8c28ec76",
+    "name" : "background_color",
+    "display_width" : null,
+    "label" : "Couleur de fond",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "4527ba72-68d9-f785-27a6-78049a46d138",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "color",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "default" : {
+      "color" : "#000",
+      "opacity" : 0
+    }
+  }, {
+    "id" : "34f6c601-729f-3ee4-545b-fff10eb60fd6",
+    "name" : "text_background",
+    "display_width" : null,
+    "label" : "Couleur de fond du texte",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "default" : {
+      "color" : "#000",
+      "opacity" : 0
+    }
+  }, {
+    "id" : "3f0344bf-d127-a770-3af3-8089d2c27d2d",
+    "name" : "background_image",
+    "display_width" : null,
+    "label" : "Image de fond",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "4527ba72-68d9-f785-27a6-78049a46d138",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "image",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "975b598e-4038-6d6b-7e59-db0c37df1bba",
+    "name" : "module_angle",
+    "display_width" : null,
+    "label" : "Arrondi de l'angle",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 0,
+    "max" : 5,
+    "step" : 1,
+    "type" : "number",
+    "default" : 0
+  }, {
+    "id" : "0c3aa7a9-3aca-4c1b-9f1e-c4ce613b7e85",
+    "name" : "row_direction",
+    "display_width" : null,
+    "label" : "Position du texte",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "4d2f6d14-31e9-a696-ca18-51e969aa6205",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "none",
+      "property" : null,
+      "operator" : "NOT_EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "row-reverse", "Droite" ], [ "row", "Gauche" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "row"
+  }, {
+    "id" : "6dbc44e4-6b1c-5024-8418-32a94bb62dc1",
+    "name" : "image",
+    "display_width" : null,
+    "label" : "Bloc image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "4d2f6d14-31e9-a696-ca18-51e969aa6205",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "form",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "bb919bc0-e1e9-780f-23c0-fbff2062c090",
+      "name" : "angle",
+      "display_width" : null,
+      "label" : "Arrondi de l'angle",
+      "required" : false,
+      "locked" : false,
+      "display" : "slider",
+      "min" : 0,
+      "max" : 5,
+      "step" : 1,
+      "type" : "number",
+      "default" : 0
+    }, {
+      "id" : "c12af279-ccfe-464e-e7e4-d77fc7187a6f",
+      "name" : "properties",
+      "display_width" : null,
+      "label" : "Propriétés",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "choices" : [ [ "shadow", "Ombre portée" ], [ "border-0", "Sans bords" ] ],
+      "multiple" : true,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : [ ]
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "angle" : 0,
+      "properties" : [ ]
+    }
+  }, {
+    "id" : "641f2fef-384e-5e1f-eb39-3d1323089b8d",
+    "name" : "form",
+    "display_width" : null,
+    "label" : "Formulaire",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "4d2f6d14-31e9-a696-ca18-51e969aa6205",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "form",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "06f463d6-c195-183f-45e5-1fa593f7a8ef",
+      "name" : "form_background",
+      "display_width" : null,
+      "label" : "Couleur de fond du formulaire",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "4d2f6d14-31e9-a696-ca18-51e969aa6205",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "form",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "color",
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }, {
+      "id" : "baa8bc7e-6ca6-8f84-2f7c-bf69bc743664",
+      "name" : "angle",
+      "display_width" : null,
+      "label" : "Arrondi de l'angle",
+      "required" : false,
+      "locked" : false,
+      "display" : "slider",
+      "min" : 0,
+      "max" : 5,
+      "step" : 1,
+      "type" : "number",
+      "default" : 0
+    }, {
+      "id" : "0129f74f-e5cf-85b5-773e-45f8996be474",
+      "name" : "properties",
+      "display_width" : null,
+      "label" : "Propriétés",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "choices" : [ [ "shadow", "Ombre portée" ], [ "border-0", "Sans bords" ] ],
+      "multiple" : true,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : [ ]
+    }, {
+      "id" : "e48a3a50-e1df-7e48-f8c2-b107c322cd97",
+      "name" : "catchphrase_spacing",
+      "display_width" : null,
+      "label" : "Espacement de l'accroche",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "form_background" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "angle" : 0,
+      "properties" : [ ],
+      "catchphrase_spacing" : { }
+    }
+  }, {
+    "id" : "9fc31886-c480-45ab-813d-44d07b7d0975",
+    "name" : "desktop_style",
+    "display_width" : null,
+    "label" : "Style Desktop",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "9d057256-ad58-258f-2723-60069fe0b11c",
+      "name" : "module_spacing",
+      "display_width" : null,
+      "label" : "Espacement global",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    }, {
+      "id" : "77445e75-de65-d589-05f0-e7d9d0f633ba",
+      "name" : "text_col",
+      "display_width" : null,
+      "label" : "Largeur du texte",
+      "required" : false,
+      "locked" : false,
+      "display" : "slider",
+      "min" : 0,
+      "max" : 12,
+      "step" : 1,
+      "type" : "number",
+      "default" : 6
+    }, {
+      "id" : "57fedf1b-8d7a-9edf-67b0-1f7f6c84819e",
+      "name" : "text_spacing",
+      "display_width" : null,
+      "label" : "Espacement du texte",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    }, {
+      "id" : "69da2275-fa6e-61ff-8c07-27166962f194",
+      "name" : "add_spacing",
+      "display_width" : null,
+      "label" : "Espacement accompagnement",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "module_spacing" : { },
+      "text_col" : 6,
+      "text_spacing" : { },
+      "add_spacing" : { }
+    }
+  }, {
+    "id" : "8d1b5d3a-6a6c-84b3-0c7f-48d4ca8e07fc",
+    "name" : "mobile_style",
+    "display_width" : null,
+    "label" : "Style Mobile",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "e44c3dd1-8d98-aa37-a36c-1bf364a24259",
+      "name" : "module_spacing",
+      "display_width" : null,
+      "label" : "Espacement global",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    }, {
+      "id" : "17c0a82f-d8e0-fb80-606e-174f02d3ff90",
+      "name" : "text_spacing",
+      "display_width" : null,
+      "label" : "Espacement du texte",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    }, {
+      "id" : "b780a482-1819-913c-aac2-bc1a3e523d57",
+      "name" : "add_spacing",
+      "display_width" : null,
+      "label" : "Espacement accompagnement",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "module_spacing" : { },
+      "text_spacing" : { },
+      "add_spacing" : { }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "module_background" : "none",
+    "background_color" : {
+      "color" : "#000",
+      "opacity" : 0
+    },
+    "text_background" : {
+      "color" : "#000",
+      "opacity" : 0
+    },
+    "background_image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "module_angle" : 0,
+    "row_direction" : "row",
+    "image" : {
+      "angle" : 0,
+      "properties" : [ ]
+    },
+    "form" : {
+      "form_background" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "angle" : 0,
+      "properties" : [ ],
+      "catchphrase_spacing" : { }
+    },
+    "desktop_style" : {
+      "module_spacing" : { },
+      "text_col" : 6,
+      "text_spacing" : { },
+      "add_spacing" : { }
+    },
+    "mobile_style" : {
+      "module_spacing" : { },
+      "text_spacing" : { },
+      "add_spacing" : { }
+    }
+  }
+} ]

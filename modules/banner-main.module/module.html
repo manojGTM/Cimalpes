@@ -1,0 +1,74 @@
+{% require_css %}
+<style>
+  {% scope_css %}
+@media screen and (max-width: 768px) {
+  .main-banner{
+    {{ module.style.mobile_style.module_spacing.css }}
+  }
+  .text-container{
+    {{ module.style.mobile_style.text_spacing.css }}
+}
+  .adds-container{
+    {{ module.style.mobile_style.add_spacing.css }}
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main-banner{
+    {{ module.style.desktop_style.module_spacing.css }}
+  }
+  .text-container{
+    {{ module.style.desktop_style.text_spacing.css }}
+  }
+  .adds-container{
+    {{ module.style.desktop_style.add_spacing.css }}
+    height: fit-content;
+  }
+}
+  .catchphrase{
+    {{ module.style.form.catchphrase_spacing.css }}
+  }
+  {% end_scope_css %}
+</style>
+{% end_require_css %}
+<div id="{{module.module_anchor}}" class="row-fluid main-banner rounded-{{ module.style.module_angle }}" style="{% if module.style.module_background == "image" %}
+    background-image: url({{ module.style.background_image.src }});
+  {% elif module.style.module_background  == "color" %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }}, {{ module.style.background_color.opacity/100 }});
+      {% endif %}">
+  <div class="container row-fluid {% if module.adds != "none" %}flex-{{module.style.row_direction}} justify-content-between{% endif %}">
+    <div class="text-container col-12 col-md-{{ module.style.desktop_style.text_col }} {% if module.style.row_direction=="row" %}me-{% else%}ms-{% endif %}md-{{module.style.spacing}}" style="background-color: rgba({{ module.style.text_background.color|convert_rgb }}, {{ module.style.text_background.opacity/100 }});
+ ">
+      {% inline_rich_text field="text" value="{{ module.text }}" %}
+    </div>
+    {% if module.adds != "none" %}
+    <div class="adds-container col-12 col-md-{{ 12 - module.style.desktop_style.text_col }} rounded-{{ module.style.form.angle }}{% for property in module.style.form.properties %} {{property}}{% endfor %}"
+         {% if module.adds == "form" %}
+          style="background-color: rgba({{ module.style.form.form_background.color|convert_rgb }}, {{ module.style.form.form_background.opacity/100 }});"
+         {% endif %}>
+      {% if module.adds == "form" %}
+        <div class="catchphrase">
+          {{module.form.catchphrase}}
+      </div>
+      <div id="formBlock"
+           data-form="{{ module.form.form_field.form_id }}"
+           data-response="{{ module.form.form_field.response_type }}"
+           {% if module.form.form_field.response_type == "redirect" %}
+            data-redirect="{{content_by_id(module.form.form_field.redirect_id).absolute_url }}"
+            data-inline='Votre formulaire a été soumis avec succès, vous allez être redirigé•e !'
+           {% elif module.form.form_field.response_type == "message" %}
+            data-inline="{{ module.form.form_field.message }}"
+           {% endif %}
+           >
+      </div>
+      {% elif module.adds == "image" %}
+        
+         {% set loadingAttr = module.image_field.loading != 'disabled' ? 'loading="{{ module.image_field.loading }}"' : '' %}
+        <img class="img-fluid" src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }} style=" {{ module.style.image.spacing_field.css }}">
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+</div>
+<div>
+</div>
